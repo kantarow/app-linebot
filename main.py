@@ -17,8 +17,8 @@ from pathlib import Path
 app = Flask(__name__)
 app.debug = False
 
-line_bot_api = LineBotApi("g8MgkA0jNHdSRUA9ZqCyuNEgmhsO9/dhMhkQQcx9+IlRFi0IdGuD91tNbYlxWnMJC+2ykuNH/eZRuV/mGGoy7iTtjAiunkdQM2HcGo6spKxm9SExVwdpqLJeeTU8GtKixaUOFHJrfvfNkAvvr539ZwdB04t89/1O/w1cDnyilFU=")
-handler = WebhookHandler("9deb0d85b6c78853f031b3240a6e64c5")
+line_bot_api = LineBotApi(LINE_TOKEN)
+handler = WebhookHandler(LINE_SERIAL_KEY)
 
 #送信先から取得した画像のPATH
 SRC_IMAGE_PATH = "{}.jpg"
