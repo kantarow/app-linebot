@@ -19,7 +19,7 @@ app.debug = False
 line_bot_api = LineBotApi("g8MgkA0jNHdSRUA9ZqCyuNEgmhsO9/dhMhkQQcx9+IlRFi0IdGuD91tNbYlxWnMJC+2ykuNH/eZRuV/mGGoy7iTtjAiunkdQM2HcGo6spKxm9SExVwdpqLJeeTU8GtKixaUOFHJrfvfNkAvvr539ZwdB04t89/1O/w1cDnyilFU=")
 handler = WebhookHandler("9deb0d85b6c78853f031b3240a6e64c5")
 
-SRC_IMAGE_PATH = "static/images/{}.jpg"
+SRC_IMAGE_PATH = "images/{}.jpg"
 MAIN_IMAGE_PATH = "images/{}_main.jpg"
 PREVIEW_IMAGE_PATH = "images/{}_preview.jpg"
 
