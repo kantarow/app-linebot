@@ -23,13 +23,15 @@ import paho.mqtt.client as mqtt
 app = Flask(__name__)
 app.debug = False
 
+LINE_TOKEN = os.environ["LINE_TOKEN"]
+LINE_SERIAL_KEY = os.environ["LINE_SERIAL_KEY"]
 line_bot_api = LineBotApi(LINE_TOKEN)
 handler = WebhookHandler(LINE_SERIAL_KEY)
 
-MQTT_USERNAME = ""
-MQTT_PASSWORD = ""
-MQTT_HOST = ""
-MQTT_PORT = ""
+MQTT_USERNAME = os.environ["MQTT_USERNAME"]
+MQTT_PASSWORD = os.environ["MQTT_PASSWORD"]
+MQTT_HOST = os.environ["MQTT_HOST"]
+MQTT_PORT = os.environ["MQTT_PORT"]
 
 mqtt_client = mqtt.Client()
 mqtt_client.username_pw_set(MQTT_USERNAME, password=MQTT_PASSWORD)
