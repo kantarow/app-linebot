@@ -1,3 +1,7 @@
 Flask==1.0.2
 line-bot-sdk==1.8.0
 requests==2.21.0
+matplotlib
+numpy
+paho-mqtt
+opencv-python
