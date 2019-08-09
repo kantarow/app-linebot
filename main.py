@@ -9,6 +9,7 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, ImageMessage
 )
+
 import os
 import json
 import requests
@@ -17,7 +18,7 @@ from pathlib import Path
 import cv2
 import copy
 import numpy as np
-import paho.mqtt.client as mptt
+import paho.mqtt.client as mqtt
 
 app = Flask(__name__)
 app.debug = False
@@ -75,7 +76,7 @@ def handle_image(event):
     save_image(message_id, src_image_path)
 
     #保存したjpgファイルを読みこむ
-    img = cv2.imread(Path(SRC_IMAGE_PATH.format(message_id)).absolute())
+    img = cv2.imread(SRC_IMAGE_PATH.format(message_id))
 
     #経路を取得する
     x, y = get_route(img)
@@ -99,7 +100,6 @@ def save_image(message_id: str, save_path: str) -> None:
     with open(save_path, "wb") as f:
         for chunk in message_content.iter_content():
             f.write(chunk)
-
 
 #画像から輪郭を抽出する関数
 def get_contours(img):
@@ -150,7 +150,6 @@ def get_route(img):
     
     route = np.array(route)
     return route[:, 0], route[:, 1]
-
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT"))
